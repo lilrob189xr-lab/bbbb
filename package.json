@@ -1,0 +1,30 @@
+{
+  "name": "kai-richy-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "validate:catalog": "tsc --ignoreConfig --module commonjs --target es2020 --strict --resolveJsonModule --esModuleInterop --skipLibCheck --outDir .validate-build src/data/validate.ts src/data/products.ts && node scripts/validate-catalog.cjs",
+    "images:photos": "python3 scripts/enhance-photos.py",
+    "images:logo": "python3 scripts/make-transparent-logo.py",
+    "images:products": "python3 scripts/prepare-product-images.py",
+    "images:redact": "python3 scripts/redact-watch-papers.py"
+  },
+  "dependencies": {
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.1.0",
+    "typescript": "^5.6.0"
+  }
+}
